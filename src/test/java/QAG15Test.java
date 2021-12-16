@@ -4,6 +4,7 @@ import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -31,7 +32,11 @@ public class QAG15Test {
                 System.out.println(e.getMessage());
             }
         } else if (config.getEnvironment().equals("local")){
-            driver = new ChromeDriver();
+            if (config.getBrowser().equals("firefox")) {
+                driver = new FirefoxDriver();
+            } else {
+                driver = new ChromeDriver();
+            }
         } else {
             System.out.println("Incorrect environment set, please use 'local' or 'remote' -Denvironment");
             System.exit(1);

@@ -43,6 +43,5 @@ public class QAG15Test {
         driver.get(config.getBaseUrl());
         assertEquals("GitHub: Where the world builds software · GitHub", driver.getTitle());
         driver.quit();
-
     }
 }

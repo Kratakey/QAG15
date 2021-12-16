@@ -20,7 +20,7 @@ public class QAG15Test {
     public void setUp() throws RuntimeException {
         if (config.getEnvironment().equals("remote")) {
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("browserName", config.getBrowser());
+            capabilities.setBrowserName(config.getBrowser());
             capabilities.setVersion(config.getVersion());
             try {
                 driver = new RemoteWebDriver(new URL(config.getURL()), capabilities);

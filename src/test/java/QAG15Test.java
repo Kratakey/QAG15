@@ -26,7 +26,7 @@ public class QAG15Test {
                 driver = new RemoteWebDriver(new URL(config.getURL()), capabilities);
 //                driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities); //for debug
             } catch (MalformedURLException e) {
-                System.out.println("Invalid grid URL");
+                System.out.println("Invalid URL");
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
